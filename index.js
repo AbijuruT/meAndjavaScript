@@ -32,9 +32,22 @@ function Circle(radius) {
 const anotherCircle = new Circle(1)
 anotherCircle.draw()
 // Adding or removing props in the obj
-anotherCircle.location = {x:1, y:3}
+anotherCircle.location = { x: 1, y: 3 }
 console.log(anotherCircle)
 delete anotherCircle.location;
 console.log(anotherCircle)
 delete anotherCircle.draw //removing method
 console.log(anotherCircle)
+
+// Iterating over or enumerate the properties in an obj using for... in..
+for (let key in circle1) {
+  if (typeof circle1[key] !== 'function') {
+    console.log(key, circle1[key])
+  }
+}
+const keys = Object.keys(circle1) // to display all the object keys
+console.log(keys)
+
+if ('radius' in circle1) { // check if a property is even in the obj
+  console.log('Circle has a radius')
+}
