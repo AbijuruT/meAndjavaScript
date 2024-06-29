@@ -21,4 +21,13 @@ function createCircle(radius) {
   }
 }
 const circle1 = createCircle(1)
-circle1.draw()
+// circle1.draw()
+
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log("Drawing with constructor function");
+  }
+}
+const anotherCircle = new Circle(1)
+anotherCircle.draw()
