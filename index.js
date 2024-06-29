@@ -31,3 +31,10 @@ function Circle(radius) {
 }
 const anotherCircle = new Circle(1)
 anotherCircle.draw()
+// Adding or removing props in the obj
+anotherCircle.location = {x:1, y:3}
+console.log(anotherCircle)
+delete anotherCircle.location;
+console.log(anotherCircle)
+delete anotherCircle.draw //removing method
+console.log(anotherCircle)
