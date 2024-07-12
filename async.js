@@ -1,9 +1,23 @@
-let order = (call_production) => {
-  console.log("order is placed, call production!")
-  call_production();
+let stocks = {
+  fruits: ["strawberry", "grapes", "banana"],
+  liquid: ["water", "ice"],
+  holder: ["come", "cup", "stick"],
+  topping: ["chocolate", "peanuts"]
+}
+
+
+
+let order = (fruitName, callProduction) => {
+  setTimeout(() => {
+    console.log(`${stocks.fruits[fruitName]} was selected!`)
+    callProduction();
+  }, 2000);
 };
 let production = () => {
-  console.log("Order received, starting production");
+  setTimeout(() => {
+    console.log("Production has started");
+
+  }, 0)
 };
 
-order(production)
+order(0, production)
