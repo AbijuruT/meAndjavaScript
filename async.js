@@ -5,8 +5,20 @@ let stocks = {
   topping: ["chocolate", "peanuts"]
 }
 
+let isShopOpen = true;
+const order = (time, work) => {
+  return new Promise((resolve, reject) => {
+    if (isShopOpen) {
+      setTimeout(() => {
+        resolve(work());
+      }, time)
+    } else {
+      reject(console.log("Shop is closed"))
+    }
+  })
+}
 
-
+order(2000, () => console.log(`${stocks.fruits[0]} was selected`))
 // let order = (fruitName, callProduction) => {
 //   setTimeout(() => {
 //     console.log(`${stocks.fruits[fruitName]} was selected!`)
