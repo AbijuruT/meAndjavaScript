@@ -34,7 +34,7 @@ order(2000, () => console.log(`${stocks.fruits[0]} was selected`)).then(() => {
   return order(1000, () => console.log('Serving Ice cream!'))
 }).catch(() => {
   console.log('Customer left')
-})
+}).finally(() => console.log('Let us call it a day!'))
 
 
 
