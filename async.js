@@ -5,7 +5,7 @@ let stocks = {
   topping: ["chocolate", "peanuts"]
 }
 
-let isShopOpen = true;
+let isShopOpen = false;
 const order = (time, work) => {
   return new Promise((resolve, reject) => {
     if (isShopOpen) {
@@ -32,7 +32,14 @@ order(2000, () => console.log(`${stocks.fruits[0]} was selected`)).then(() => {
   return order(3000, () => console.log(`${stocks.topping[0]} was selected`))
 }).then(() => {
   return order(1000, () => console.log('Serving Ice cream!'))
+}).catch(() => {
+  console.log('Customer left')
 })
+
+
+
+
+
 // let order = (fruitName, callProduction) => {
 //   setTimeout(() => {
 //     console.log(`${stocks.fruits[fruitName]} was selected!`)
