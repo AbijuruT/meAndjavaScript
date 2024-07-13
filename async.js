@@ -18,7 +18,17 @@ const order = (time, work) => {
   })
 }
 
-order(2000, () => console.log(`${stocks.fruits[0]} was selected`))
+order(2000, () => console.log(`${stocks.fruits[0]} was selected`)).then(() => {
+  return order(0, () => console.log("Production has started"));
+}).then(() => {
+  return order(2000, () => console.log("The fruit was chooped"))
+}).then(() => {
+  return order(1000, () => console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} was selected`))
+}).then(() => {
+  return order(1000, () => console.log("Machine started"))
+}).then(() => {
+  return order(2000, () => console.log(`Ice cream placed on the ${stocks.holder[1]}`))
+})
 // let order = (fruitName, callProduction) => {
 //   setTimeout(() => {
 //     console.log(`${stocks.fruits[fruitName]} was selected!`)
