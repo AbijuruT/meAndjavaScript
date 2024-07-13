@@ -6,35 +6,54 @@ let stocks = {
 }
 
 let isShopOpen = true;
-const order = (time, work) => {
-  return new Promise((resolve, reject) => {
-    if (isShopOpen) {
-      setTimeout(() => {
-        resolve(work());
-      }, time)
-    } else {
-      reject(console.log("Shop is closed"))
-    }
-  })
-}
 
-order(2000, () => console.log(`${stocks.fruits[0]} was selected`)).then(() => {
-  return order(0, () => console.log("Production has started"));
-}).then(() => {
-  return order(2000, () => console.log("The fruit was chooped"))
-}).then(() => {
-  return order(1000, () => console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} was selected`))
-}).then(() => {
-  return order(1000, () => console.log("Machine started"))
-}).then(() => {
-  return order(2000, () => console.log(`Ice cream placed on the ${stocks.holder[1]}`))
-}).then(() => {
-  return order(3000, () => console.log(`${stocks.topping[0]} was selected`))
-}).then(() => {
-  return order(1000, () => console.log('Serving Ice cream!'))
-}).catch(() => {
-  console.log('Customer left')
-}).finally(() => console.log('Let us call it a day!'))// This finally stmt runs even if the promise is not resolved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const order = (time, work) => {
+//   return new Promise((resolve, reject) => {
+//     if (isShopOpen) {
+//       setTimeout(() => {
+//         resolve(work());
+//       }, time)
+//     } else {
+//       reject(console.log("Shop is closed"))
+//     }
+//   })
+// }
+
+// order(2000, () => console.log(`${stocks.fruits[0]} was selected`)).then(() => {
+//   return order(0, () => console.log("Production has started"));
+// }).then(() => {
+//   return order(2000, () => console.log("The fruit was chooped"))
+// }).then(() => {
+//   return order(1000, () => console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} was selected`))
+// }).then(() => {
+//   return order(1000, () => console.log("Machine started"))
+// }).then(() => {
+//   return order(2000, () => console.log(`Ice cream placed on the ${stocks.holder[1]}`))
+// }).then(() => {
+//   return order(3000, () => console.log(`${stocks.topping[0]} was selected`))
+// }).then(() => {
+//   return order(1000, () => console.log('Serving Ice cream!'))
+// }).catch(() => {
+//   console.log('Customer left')
+// }).finally(() => console.log('Let us call it a day!'))// This finally stmt runs even if the promise is not resolved
 
 
 
