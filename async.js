@@ -28,6 +28,10 @@ order(2000, () => console.log(`${stocks.fruits[0]} was selected`)).then(() => {
   return order(1000, () => console.log("Machine started"))
 }).then(() => {
   return order(2000, () => console.log(`Ice cream placed on the ${stocks.holder[1]}`))
+}).then(() => {
+  return order(3000, () => console.log(`${stocks.topping[0]} was selected`))
+}).then(() => {
+  return order(1000, () => console.log('Serving Ice cream!'))
 })
 // let order = (fruitName, callProduction) => {
 //   setTimeout(() => {
