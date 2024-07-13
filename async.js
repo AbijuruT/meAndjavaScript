@@ -5,7 +5,7 @@ let stocks = {
   topping: ["chocolate", "peanuts"]
 }
 
-let isShopOpen = false;
+let isShopOpen = true;
 const order = (time, work) => {
   return new Promise((resolve, reject) => {
     if (isShopOpen) {
